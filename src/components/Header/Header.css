@@ -1,0 +1,40 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    
+    /* font-family: sans-serif; */
+
+}
+.logo{
+    width: 10rem;
+    height: 3rem;
+    /* padding-right: 15rem; */
+    
+}
+.header-menu{
+ list-style: none; 
+ display: flex;
+ gap: 2rem;
+ color: white;
+ 
+}
+.header-menu>li:hover{
+    cursor: pointer;
+    color: var(--orange);
+    /* cursor: pointer; */
+}
+@media screen and (max-width:768px) {
+    /*targeting all the menu bar content*/
+    .header>:nth-child(2){
+        position: fixed; /*to prevent scrolling up/down */
+        right: 2rem;
+        z-index: 10; /*above everything on page*/
+    }
+    .header-menu{
+        flex-direction: column;
+        background-color: var(--appColor);
+        padding: 1rem;
+        border-radius: 5%;
+    }
+    
+}

@@ -1,0 +1,277 @@
+/*1.flex: puts the things in a row
+  2. justify-content: center-puts everything in center.
+                 : space-between- place item with equal gap.
+  3.flex:3 (left) flex:1 (rigth)- means the left has 3times widht of right
+  4. width: fit-content; fits the text inside the box(donot take the whole length/end of the page)
+  5.figures>div>span:nth-of-type(1)-means we are targetting all 
+    the first span of each div inside class-figures.
+  6.position:absolute- fix the location of the div-content.
+    also the elements succeedin it in that div will be placed independently to it.
+  */
+.hero{
+    display: flex;  
+    justify-content: space-between;
+/* color: var(--orange) ; */
+}
+.left-h{
+    padding: 2rem;
+   padding-top: 1.5em;
+   flex: 3;
+}
+.right-h{
+    flex: 1;
+}
+.the-best-ad{
+    margin-top: 4rem;
+    background-color: #363d42;
+    width: fit-content; 
+    border-radius: 4rem;
+    padding: 20px 13px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 0;
+    
+}
+.the-best-ad>span{
+    z-index: 2;
+}
+.the-best-ad>div {
+    position: absolute;
+    background-color: var(--orange);
+    width: 5.4rem;
+    height: 80%;
+    left: 8px;
+    border-radius: 2rem;
+    z-index: 1;
+    
+}
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: white;
+    text-overflow: inherit;
+}
+
+.hero-text>div:nth-of-type(3){
+    font-size: 1rem;
+    font-weight: 200;
+    text-transform: none;
+    letter-spacing: 1px;
+    width: 80%;
+  }
+.figures{
+    display: flex;
+    gap: 2rem;
+    
+    margin-bottom: 2rem;
+}
+.figures>div{
+    display: flex;
+    flex-direction: column;
+}
+.figures>div>span:nth-of-type(1) {
+    color: white;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+   
+}
+.figures>div>span:nth-of-type(2){
+    color: var(--gray);
+    text-transform: uppercase;
+}
+.hero-buttons{
+    display: flex;
+    gap: 1rem;
+   font-weight: normal;
+}
+.hero-buttons>:nth-child(1){
+    color: white;
+    background-color: var(--orange);
+    width: 8rem;
+}
+.hero-buttons>:nth-child(2){
+    color: white;
+    background-color: transparent;
+    width: 8rem;
+    border: 2px solid var(--orange);
+}
+.right-h{
+    background-color:#f48916;
+    position: relative;
+    /* z-index: ; */
+}
+.heart-rate>img{
+    width: 2rem;
+}
+.right-h>.btn{
+    position: absolute;
+   right: 3rem;
+   top: 2rem;
+   color: black;
+}
+.heart-rate{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* background-color: var(--darkGray); */
+    background-color: var(--darkGrey);
+    width: fit-content;
+    padding: 1rem;
+    align-items: start;
+    border-radius: 5px;
+    position: absolute;
+    right: 4rem;
+    top: 7rem;
+
+}
+/* span is the 2nd/3rd child inside heart-rate div.
+   so we are targetting its components*/
+.heart-rate>:nth-child(2){
+    color: var(--gray);
+}
+.heart-rate>:nth-child(3){
+    color: white;
+    font-size: 1.5rem;
+}
+.hero-image{
+    position: absolute;
+    top:10rem;
+    right: 8rem;
+    width: 23rem;
+}
+.hero-image-back{
+    position: absolute;
+    top: 4rem;
+    right: 20rem;
+    width: 15rem;
+    z-index: -1;
+}
+.calories{
+    display: flex;
+    gap: 2rem;
+    background-color: var(--caloryCard);
+    border-radius: 5px;
+    padding: 1rem;
+    width: fit-content;
+    /* width: fit-content it should contain only 
+    equal to the content inside it. */
+    position: absolute;
+    top: 32rem;
+    right: 28rem;
+
+}
+.calories>img{
+    width: 3rem;
+}
+/* targetting the text inside the calorie-div */
+.calories>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* targetting the first child(which is span inside the div */
+.calories>div> :nth-child(1){
+    color: var(--gray);
+
+}
+/* targettign the second child(2nd span inside the div) */
+.calories>div>:nth-child(2){
+    color: white;
+    font-size: 1.5rem;
+}
+.hero-blur{
+    width: 23rem;
+    height: 23rem;
+    left: 0; /* to the left most part of the hero section */
+}
+
+/* MOBILE VIEW: RESPONSIVENESS*/
+@media screen and (max-width:768px) {
+
+ /*targetting the first div*/
+ .hero{
+    flex-direction: column;
+ }
+ .hero-blur {
+    width: 14rem;
+ }
+.the-best-ad{
+    margin-top: 0;
+    font-size: small;
+    align-self: center;
+    transform: scale(0.8); /*small on small device*/
+
+}
+.hero-text{
+    font-size: xx-large;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem; /*to separate from the best add part */
+    gap: 0.7rem;
+}
+/*the description below the large hero text */
+.hero-text> div:nth-of-type(3){
+    font-size: small;
+    font-weight: 200; /*extra light font weigth, 900+ goes in bold section*/
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+.hero-buttons{
+    justify-content: center;
+}
+/* first span( i.e, 140 ) */
+.figures > div > span:nth-of-type(1){
+    font-size: large; /*large for small device*/
+}
+/* text below the numbers*/
+.figures>div>span:nth-child(2){
+    font-size: small;
+}
+ /*RIGHT SIDE*/
+ .right-h{
+    position: relative;
+    background: none; /*removing the orange background*/
+
+ }
+ .heart-rate{
+    left: 1rem;
+    top: 2rem;
+ }
+ .calories{
+    position: relative;
+    top: 5rem;
+    left: 3rem;
+   
+ } 
+ /*reducing the size of calori image*/
+ .calories>img{
+    width: 2rem;
+ }
+ .calories > div > :nth-child(2){
+    font-size: 1rem;
+ }
+ .hero-image{
+    position: relative;
+    transform: scale(0.8);
+    width: 14rem;
+    left: 7rem;
+    top: 5rem;
+    align-self: center;
+ }
+ /* animation behind the hero image*/
+ .hero-image-back{
+    width: 15rem;
+    left: 2rem;
+    top: 0;
+    transform: scale(0.8); /*smaller size*/
+    
+ }
+}

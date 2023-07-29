@@ -1,0 +1,7 @@
+Fitness Website.
+1. Developed a responsive gym webpage using ReactJS, CSS, and HTML,
+  which includes a homepage pages with dynamic content and user interaction.
+
+3. Implemented a user-friendly interface for the gym webpage, which allows users to view classes, 
+   schedules, pricing, and instructor details.
+2. Added smooth and beautiful animations using some advance css styling.

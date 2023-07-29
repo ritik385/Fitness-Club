@@ -1,0 +1,84 @@
+.Programs{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+.programs-header{
+    display: flex;
+    gap: 5rem;
+    font-weight: bold;
+    font-size: 3rem;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.program-categories{
+    display: flex;
+    /*we want all the cards to be displayed along the row
+    so all the itmes(basically all the cards) will be dispalyed
+     in  a row( flex )*/
+    gap: 1rem;
+    cursor: pointer;
+    
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    /* for iteration 1 under the category-class, 
+    all the content will be flexed in columns wise,
+    gap-between them will be 1rem.
+    */
+    background-color: gray;
+    padding: 2rem;
+    gap: 1rem;
+    color: white;
+    justify-content: space-between;
+    
+}
+.category:hover{
+    cursor: pointer;
+    background: var(--planCard);
+}
+.category>:nth-child(1){
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+}
+.category>:nth-child(2){
+    font-size: 1rem;
+    font-weight: bold;
+}
+.category>:nth-child(3){
+  font-size: 0.9rem;
+  line-height: 25px;
+}
+.join-now  {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.join-now>img{
+    width: 1.5em;
+}
+.join-now>:hover{
+    color: red;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .programs-header{
+        flex-direction: column;
+        gap: 1rem;
+        font-size: x-large;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        transform: scale(1.2); /*increased size heading*/
+    }
+    .program-categories{
+        flex-direction: column; /*making all the cards in column wise*/
+    }
+}
